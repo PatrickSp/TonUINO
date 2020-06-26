@@ -19,6 +19,7 @@
 
 // uncomment the below line to enable five button support
 //#define FIVEBUTTONS
+//#define RESET_ON_POWERON 
 
 static const uint32_t cardCookie = 322417479;
 
@@ -774,7 +775,7 @@ void setup() {
   digitalWrite(shutdownPin, LOW);
 
 
-  // RESET --- ALLE DREI KNÖPFE BEIM STARTEN GEDRÜCKT HALTEN -> alle EINSTELLUNGEN werden gelöscht
+#ifdef RESET_ON_POWERON  // RESET --- ALLE DREI KNÖPFE BEIM STARTEN GEDRÜCKT HALTEN -> alle EINSTELLUNGEN werden gelöscht
   if (digitalRead(buttonPause) == LOW && digitalRead(buttonUp) == LOW &&
       digitalRead(buttonDown) == LOW) {
     Serial.println(F("Reset -> EEPROM wird gelöscht"));
@@ -783,7 +784,7 @@ void setup() {
     }
     loadSettingsFromFlash();
   }
-
+#endif
 
   // Start Shortcut "at Startup" - e.g. Welcome Sound
   playShortCut(3);
