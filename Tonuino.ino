@@ -153,7 +153,7 @@ void resetSettings() {
   mySettings.initVolume = 15;
   mySettings.eq = 1;
   mySettings.locked = false;
-  mySettings.standbyTimer = 0;
+  mySettings.standbyTimer = 1;
   mySettings.invertVolumeButtons = true;
   mySettings.shortCuts[0].folder = 0;
   mySettings.shortCuts[1].folder = 0;
@@ -1234,7 +1234,7 @@ void adminMenu(bool fromCard = false) {
   }
   else if (subMenu == 8) {
     switch (voiceMenu(5, 960, 960)) {
-      case 1: mySettings.standbyTimer = 5; break;
+      case 1: mySettings.standbyTimer = 1; break;
       case 2: mySettings.standbyTimer = 15; break;
       case 3: mySettings.standbyTimer = 30; break;
       case 4: mySettings.standbyTimer = 60; break;
