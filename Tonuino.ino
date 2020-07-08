@@ -159,7 +159,7 @@ void resetSettings() {
   mySettings.shortCuts[1].folder = 0;
   mySettings.shortCuts[2].folder = 0;
   mySettings.shortCuts[3].folder = 0;
-  mySettings.adminMenuLocked = 0;
+  mySettings.adminMenuLocked = 1;
   mySettings.adminMenuPin[0] = 1;
   mySettings.adminMenuPin[1] = 1;
   mySettings.adminMenuPin[2] = 1;
@@ -173,7 +173,7 @@ void migrateSettings(int oldVersion) {
     Serial.println(F("=== resetSettings()"));
     Serial.println(F("1 -> 2"));
     mySettings.version = 2;
-    mySettings.adminMenuLocked = 0;
+    mySettings.adminMenuLocked = 1;
     mySettings.adminMenuPin[0] = 1;
     mySettings.adminMenuPin[1] = 1;
     mySettings.adminMenuPin[2] = 1;
