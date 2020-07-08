@@ -956,7 +956,8 @@ void loop() {
     readButtons();
 
     // admin menu
-    if ((pauseButton.pressedFor(LONG_PRESS) || upButton.pressedFor(LONG_PRESS) || downButton.pressedFor(LONG_PRESS)) && pauseButton.isPressed() && upButton.isPressed() && downButton.isPressed()) {
+    // disable - ToDo for Hold function
+/*     if ((pauseButton.pressedFor(LONG_PRESS) || upButton.pressedFor(LONG_PRESS) || downButton.pressedFor(LONG_PRESS)) && pauseButton.isPressed() && upButton.isPressed() && downButton.isPressed()) {
       mp3.pause();
       do {
         readButtons();
@@ -964,7 +965,7 @@ void loop() {
       readButtons();
       adminMenu();
       break;
-    }
+    }*/
 
     if (pauseButton.wasReleased()) {
       if (activeModifier != NULL)
